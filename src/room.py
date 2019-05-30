@@ -12,5 +12,17 @@ class Room:
         self.s_to = None 
         self.e_to = None 
         self.w_to = None  
-    def __str__(self):
-        return f"-----------\n{self.name}\n\n {self.description}\n\n"
+    def __repr__(self):
+        returnString = f"-----------\n{self.name}\n\n {self.description}\n\n"
+        returnString += f"\n\n{self.getRoomExitString()}\n\n"
+    def getRoomExitString(self):
+        exits = []
+        if self.n_to is not None:
+            exits.append("n")
+        if self.s_to is not None:
+            exits.append("s")
+        if self.e_to is not None:
+            exits.append("e")
+        if self.w_to is not None:
+            exits.append("w")
+        return ", ".join(exits)
