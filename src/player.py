@@ -2,14 +2,9 @@
 # currently.
 
 class Player:
-    def __init__(self, name, startingRoom):
-        self.name = name
-        self.currentRoom = startingRoom
-    def travel(self, direction):
-        nextRoom = self.currentRoom.getRoomInDirection(direction)
-        if nextRoom is not None:
-            self.currentRoom = nextRoom
-            print(self.currentRoom)
-        else:
-            print("You cannot move in that direction.")
+    """Holds information about a player"""
+    def __init__(self, startRoom):
+        self.curRoom = startRoom
+        self.contents = []
+        self.score = 0
 
